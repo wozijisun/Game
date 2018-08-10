@@ -1,0 +1,424 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body,
+html {
+	display: grid;
+	height: 100%;
+	width: 100%;
+	background-color: rgb(242, 242, 242);
+	font-family: "Microsoft Yahei";
+  	font-weight: 100;
+	color: rgba(0, 0, 16, 0.8);
+	font-weight: 700;
+	padding: 0;
+	margin: 0;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+	color: rgba(0, 0, 16, 0.8);
+	text-decoration: none;
+}
+
+a:hover,
+a:active {
+	border-bottom: 0.1em solid rgba(0, 0, 16, 0.8);
+	color: rgba(0, 0, 16, 0.8);
+	text-decoration: none;
+}
+
+span {
+	color: rgba(0, 0, 16, 0.4);
+	font-size: 70%;
+}
+
+header {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	margin: auto;
+	width: 34.6rem;
+}
+
+header h1 {
+	font-size: 2.8em;
+}
+
+body{background: url(../img/bg.png) repeat;}
+
+.body-wrapper {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    float: left;
+    z-index: 9999;
+    position: relative;
+}
+.container {
+    margin: 0 auto;
+    clear: both;
+    display: block;
+    position: relative;
+}
+#nav {
+    width: 25%;
+    float: left;
+    height: auto;
+    z-index: 10000;
+    padding: 10px 0;
+}
+.card {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	margin: auto;
+	-webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 10, 0.29), 0 0.2rem 0.2rem rgba(0, 0, 10, 0.33);
+	box-shadow: 0 0.5rem 1rem rgba(0, 0, 10, 0.29), 0 0.2rem 0.2rem rgba(0, 0, 10, 0.33);
+	background-color: rgba(0, 0, 0, .45);
+	padding: 0.3rem;
+	width: 90%;
+	border-radius: 1rem;
+}
+
+.rating-container {
+	padding: 0.4rem 2rem;
+	width: 100%;
+}
+
+.rating-text p {
+	color: rgb(241, 255, 106);
+	font-family: "Microsoft Yahei";
+	font-weight: 100;
+	font-size: 1.4rem;
+	padding: 0.3rem;
+	text-align: left;
+	letter-spacing: 0.15rem;
+}
+
+.rating {
+	background-color: rgba(0, 0, 16, 0.8);
+	padding: 0.4rem 0.4rem 0.1rem 0.4rem;
+	border-radius: 2.2rem;
+	margin: 0 0 2rem;
+}
+
+.rating svg {
+	height: 3.6rem;
+	width: 3.6rem;
+	margin: 0.2rem 0.5rem;
+}
+
+.rating-form-2 svg {
+	height: 3rem;
+	width: 3rem;
+	margin: 0.5rem;
+}
+
+.rating button{
+	width: 100%;
+	font-family: "Microsoft Yahei";
+	font-weight: 100;
+	font-size: 1.4rem;
+	padding: 1rem 2rem;
+    border-radius: 2.2rem;
+    border: none;
+    background: #AC92EC;
+    cursor: pointer;
+    margin-top: 0.2rem;
+}
+.rating button:hover, .rating button:focus{
+	background: #c7b1ff;
+}
+
+#radios label {
+	position: relative;
+}
+
+input[type="radio"] {
+	position: absolute;
+	opacity: 0;
+}
+
+input[type="radio"] + svg {
+	-webkit-transition: all 0.2s;
+	transition: all 0.2s;
+}
+
+input + svg {
+	cursor: pointer;
+}
+
+/***************************************************************/
+input[class="tree"]:hover + svg ellipse,
+input[class="tree"]:checked + svg ellipse,
+input[class="tree"]:focus + svg ellipse{
+	fill: rgba(25, 13, 10, .5);
+}
+input[class="tree"]:hover + svg path:nth-child(2),
+input[class="tree"]:checked + svg path:nth-child(2),
+input[class="tree"]:focus + svg path:nth-child(2){
+	fill: rgb(72, 45, 19);
+}
+input[class="tree"]:hover + svg path:nth-child(3),
+input[class="tree"]:checked + svg path:nth-child(3),
+input[class="tree"]:focus + svg path:nth-child(3){
+	fill: rgb(34, 151, 106);
+}
+input[class="tree"]:hover + svg path:nth-child(4),
+input[class="tree"]:checked + svg path:nth-child(4),
+input[class="tree"]:focus + svg path:nth-child(4){
+	fill: rgb(22, 111, 92);
+}
+/***************************************************************/
+input[class="box"]:hover + svg polygon,
+input[class="box"]:checked + svg polygon,
+input[class="box"]:focus + svg polygon{
+	fill: rgba(25, 13, 10, .5);
+}
+input[class="box"]:hover + svg rect:nth-child(2),
+input[class="box"]:checked + svg rect:nth-child(2),
+input[class="box"]:focus + svg rect:nth-child(2) {
+	fill: rgb(175, 97, 39);
+}
+input[class="box"]:hover + svg rect:nth-child(3),
+input[class="box"]:checked + svg rect:nth-child(3),
+input[class="box"]:focus + svg rect:nth-child(3) {
+	fill: rgb(236, 165, 90);
+}
+input[class="box"]:hover + svg path,
+input[class="box"]:checked + svg path,
+input[class="box"]:focus + svg path {
+	fill: rgb(130, 73, 36);
+}
+input[class="box"]:hover + svg rect:nth-child(5),
+input[class="box"]:checked + svg rect:nth-child(5),
+input[class="box"]:focus + svg rect:nth-child(5) {
+	fill: rgb(130, 73, 36);
+}
+input[class="box"]:hover + svg rect:nth-child(6),
+input[class="box"]:checked + svg rect:nth-child(6),
+input[class="box"]:focus + svg rect:nth-child(6) {
+	fill: rgb(130, 73, 36);
+}
+/***************************************************************/
+input[class="complete"] + svg image{
+	opacity: 0;
+}
+input[class="complete"]:hover + svg path:nth-child(5),
+input[class="complete"]:checked + svg path:nth-child(5),
+input[class="complete"]:focus + svg path:nth-child(5),
+input[class="complete"]:hover + svg path:nth-child(6),
+input[class="complete"]:checked + svg path:nth-child(6),
+input[class="complete"]:focus + svg path:nth-child(6),
+input[class="complete"]:hover + svg path:nth-child(11),
+input[class="complete"]:checked + svg path:nth-child(11),
+input[class="complete"]:focus + svg path:nth-child(11){
+	fill: rgb(244, 238, 97);
+}
+input[class="complete"]:hover + svg image,
+input[class="complete"]:checked + svg image,
+input[class="complete"]:focus + svg image{
+	opacity: 0.5;
+}
+input[class="complete"]:hover + svg linearGradient stop,
+input[class="complete"]:checked + svg linearGradient stop,
+input[class="complete"]:focus + svg linearGradient stop{
+	stop-color:#FFF100;
+}
+
+/***************************************************************/
+input[class="character"]:hover + svg,
+input[class="character"]:checked + svg,
+input[class="character"]:focus + svg {
+	fill: rgb(229, 132, 0);
+}
+
+input[class="character"]:hover + svg path:nth-child(1),
+input[class="character"]:checked + svg path:nth-child(1),
+input[class="character"]:focus + svg path:nth-child(1) {
+	fill: rgba(25, 13, 10, .5);
+}
+input[class="character"]:hover + svg path:nth-child(3),
+input[class="character"]:checked + svg path:nth-child(3),
+input[class="character"]:focus + svg path:nth-child(3) {
+	fill: rgb(209, 161, 125);
+}
+input[class="character"]:hover + svg polygon:nth-child(7),
+input[class="character"]:checked + svg polygon:nth-child(7),
+input[class="character"]:focus + svg polygon:nth-child(7) {
+	fill: rgb(6, 29, 44);
+}
+input[class="character"]:hover + svg polygon:nth-child(8),
+input[class="character"]:checked + svg polygon:nth-child(8),
+input[class="character"]:focus + svg polygon:nth-child(8) {
+	fill: rgb(104, 181, 229);
+}
+input[class="character"]:hover + svg path:nth-child(4),
+input[class="character"]:checked + svg path:nth-child(4),
+input[class="character"]:focus + svg path:nth-child(4),
+input[class="character"]:hover + svg path:nth-child(9),
+input[class="character"]:checked + svg path:nth-child(9),
+input[class="character"]:focus + svg path:nth-child(9),
+input[class="character"]:hover + svg path:nth-child(11),
+input[class="character"]:checked + svg path:nth-child(11),
+input[class="character"]:focus + svg path:nth-child(11) {
+	fill: rgb(244, 205, 173);
+}
+input[class="character"]:hover + svg polygon:nth-child(2),
+input[class="character"]:checked + svg polygon:nth-child(2),
+input[class="character"]:focus + svg polygon:nth-child(2),
+input[class="character"]:hover + svg polygon:nth-child(5),
+input[class="character"]:checked + svg polygon:nth-child(5),
+input[class="character"]:focus + svg polygon:nth-child(5),
+input[class="character"]:hover + svg polygon:nth-child(10),
+input[class="character"]:checked + svg polygon:nth-child(10),
+input[class="character"]:focus + svg polygon:nth-child(10),
+input[class="character"]:hover + svg polygon:nth-child(12),
+input[class="character"]:checked + svg polygon:nth-child(12),
+input[class="character"]:focus + svg polygon:nth-child(12) {
+	fill: rgb(255, 255, 255);
+}
+/***************************************************************/
+
+.mapbox{
+	width: 70%;
+	float: left;
+	padding: 10px 0;
+}
+.map{
+	width: 576px;
+	height: 576px;
+	margin: 0 auto;
+	background: url(../img/bg_map.png) repeat;
+	box-shadow: 0 0.5rem 1rem 0.5rem rgba(0, 0, 10, 0.29), 0 0.2rem 0.2rem rgba(0, 0, 10, 0.33);
+}
+.map .item{
+	width: 36px;
+	height: 36px;
+	position: relative;
+	float: left;
+	cursor: pointer;
+}
+.map .item img{
+	position: absolute; 
+	bottom: 0;
+	left: 0;
+}
+
+footer {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: end;
+	-ms-flex-pack: end;
+	justify-content: flex-end;
+	text-align: right;
+	width: 34.6rem;
+	margin: auto;
+}
+
+footer p {
+	font-size: 1.3em;
+}
+
+@media screen and (max-width: 650px) and (max-height: 700px) {
+	body,
+	html {
+		font-size: 0.7rem;
+	}
+	header h1 {
+		font-size: 4em;
+	}
+	footer p {
+		font-size: 2em;
+	}
+}
+
+@media screen and (max-height: 700px) {
+	body,
+	html {
+		font-size: 0.7rem;
+	}
+	header h1 {
+		font-size: 4em;
+	}
+	footer p {
+		font-size: 2em;
+	}
+}
+
+@media screen and (max-width: 650px) {
+	body,
+	html {
+		font-size: 0.7rem;
+	}
+	header h1 {
+		font-size: 4em;
+	}
+	footer p {
+		font-size: 2em;
+	}
+}
+
+@media screen and (max-width: 450px) and (max-height: 550px) {
+	body,
+	html {
+		font-size: 0.6rem;
+	}
+	header h1 {
+		font-size: 4.6em;
+	}
+	footer p {
+		font-size: 3em;
+	}
+}
+
+@media screen and (max-height: 550px) {
+	body,
+	html {
+		font-size: 0.6rem;
+	}
+	header h1 {
+		font-size: 4.6em;
+	}
+	footer p {
+		font-size: 3em;
+	}
+}
+
+@media screen and (max-width: 450px) {
+	body,
+	html {
+		font-size: 0.6rem;
+	}
+	header h1 {
+		font-size: 4.6em;
+	}
+	footer p {
+		font-size: 3em;
+	}
+}
+
+@media screen and (max-width: 400px) and (max-height: 500px) {
+	body,
+	html {
+		height: 500px;
+		width: 400px;
+	}
+}
+
+@media screen and (max-height: 500px) {
+	body,
+	html {
+		height: 500px;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	body,
+	html {
+		width: 400px;
+	}
+}

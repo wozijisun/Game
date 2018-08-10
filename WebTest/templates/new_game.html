@@ -1,0 +1,288 @@
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>推出一个大箱子</title>
+  <link rel="stylesheet" href="css/style.css">
+  
+  <link rel="stylesheet" href="css/select.css">
+  
+<script language="javascript">
+function gameinfo()
+{
+	var b="bx=16" + "\n" + "by=16" + "\n";
+	var ren="", tree="", box="", goal="";
+	var ren_num=1,tree_num=1,box_num=1,goal_num=1;
+	for (var m=1;m<17;m++)
+	{
+		for (var n=1;n<17;n++)
+		{
+			var ischaracter = document.getElementById(m + '-' + n).src;
+			if (ischaracter.search("img/tree.png") != -1 )
+			{
+				tree=tree + "wx" + tree_num + "=" + m + "\n" + "wy" + tree_num + "=" + n + "\n";
+				tree_num=++tree_num;
+			}
+			if (ischaracter.search("img/box.png") != -1 )
+			{
+				box=box + "px" + box_num + "=" + m + "\n" + "py" + box_num + "=" + n + "\n";
+				box_num=++box_num;
+			}
+			if (ischaracter.search("img/complete.png") != -1 )
+			{
+				goal=goal + "ox" + goal_num + "=" + m + "\n" + "oy" + goal_num + "=" + n + "\n";
+				goal_num=++goal_num;
+			}
+			if (ischaracter.search("img/character.png") != -1 )
+			{
+				ren="rx=" + m + "\n" + "ry=" + n + "\n";
+			}
+		}
+	}
+	// return b+ren+box+goal+tree
+	// alert(b+ren+box+goal+tree)
+	document.getElementById("data_for_game").value = b+"\n"+ren+"\n"+box+"\n"+goal+"\n"+tree
+}
+function test(i, j)
+{
+	var tree = document.getElementById('tree');
+	var box = document.getElementById('box');
+	var complete = document.getElementById('complete');
+	var character = document.getElementById('character');
+	
+	if (tree.checked == true)
+	{
+		var value = document.getElementById(i + '-' + j).src;
+		if (value.search("img/tree.png") != -1 ){
+			document.getElementById(i + '-' + j).src="";
+		} 
+		else 
+		{
+			document.getElementById(i + '-' + j).src="img/tree.png";
+		}
+		
+		
+	}
+	if (box.checked == true)
+	{
+		var value = document.getElementById(i + '-' + j).src;
+		if (value.search("img/box.png") != -1 ){
+			document.getElementById(i + '-' + j).src="";
+		} 
+		else 
+		{
+			document.getElementById(i + '-' + j).src="img/box.png";
+		}
+	}
+	if (complete.checked == true)
+	{
+		var value = document.getElementById(i + '-' + j).src;
+		if (value.search("img/complete.png") != -1 ){
+			document.getElementById(i + '-' + j).src="";
+		} 
+		else 
+		{
+			document.getElementById(i + '-' + j).src="img/complete.png";
+		}
+	}
+	if (character.checked == true)
+	{
+		var value = document.getElementById(i + '-' + j).src;
+		for (var m=1;m<17;m++)
+		{
+			for (var n=1;n<17;n++)
+			{
+				var ischaracter = document.getElementById(m + '-' + n).src;
+				if (ischaracter.search("img/character.png") != -1 )
+				{
+					document.getElementById(m + '-' + n).src="";
+					document.getElementById(i + '-' + j).src="img/character.png";
+				}
+			}
+		}
+		if (value.search("img/character.png") != -1 ){
+			document.getElementById(i + '-' + j).src="";
+		} 
+		else 
+		{
+			document.getElementById(i + '-' + j).src="img/character.png";
+		}
+	}
+}
+</script>
+</head>
+
+<body>
+<div class="body-wrapper">
+  <nav id="nav">
+    <div class="container">
+        <div class="navopener">
+          <div class="card">
+    <div class="rating-container">
+	  
+      <div class="rating-text">
+        
+      </div>
+      <div class="rating">
+	  
+      </div>
+
+      <div class="rating-text">
+        <p>选择元素：</p>
+      </div>
+      <div class="rating">
+        <form class="rating-form">
+
+          <label for="tree">
+            <input type="radio" name="rating" class="tree" id="tree" value="tree" />
+            <svg version="1.2" baseProfile="tiny" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="35px" height="44px" viewBox="0 0 35 44" xml:space="preserve">
+              <ellipse fill="#707070" cx="17.151" cy="38.342" rx="16.857" ry="5.52"/>
+              <path fill="#393A3A" d="M21.929,39.489c0,0-1.177,0.665-3.651,0.665c-2.475,0-3.651-0.665-3.651-0.665s0.358-0.106,0.358-1.729
+                c0-0.127,0-30.661,0-30.661h6.586c0,0-0.001,30.398,0,30.661C21.579,39.383,21.929,39.489,21.929,39.489z"/>
+              <path fill="#D6D6D6" d="M30.341,22.274c1.847-1.031,2.952-2.303,2.952-3.685c0-3.43-11.596-18.452-15.016-18.452
+                S3.261,15.16,3.261,18.59c0,1.382,1.105,2.654,2.953,3.685c-2.505,3.52-4.366,6.816-4.366,8.252c0,3.753,7.356,6.792,16.43,6.792
+                c9.073,0,16.43-3.039,16.43-6.792C34.707,29.091,32.846,25.795,30.341,22.274z"/>
+              <path fill="#A3A3A3" d="M18.277,27.389c5.772,0,10.781-1.348,13.294-3.323c-0.386-0.582-0.795-1.181-1.226-1.783
+                  c-2.734,1.526-7.121,2.516-12.068,2.516c-1.451,0-2.844-0.094-4.17-0.253c-0.073-0.029-0.173-0.066-0.314-0.114
+                  c-1.069-0.505-1.372-1.35-1.651-2.587c-0.451-2.008-0.266-4.831,0.423-6.617c-1.515,1.487-2.893,3.38-3.261,5.179
+                  c-0.076-0.521-0.1-1.073-0.1-1.65c0-3.431,5.654-18.617,9.074-18.617c-3.42,0-15.016,15.022-15.016,18.452
+                  c0,1.374,1.082,2.643,2.91,3.671c-2.5,3.522-4.354,6.811-4.354,8.249c0,2.997,4.734,5.795,12.093,6.567
+                  c-0.11-0.019-0.272-0.055-0.484-0.127c-1.179-0.555-1.986-1.976-2.359-3.091c-0.722-2.162-0.137-4.216,0.441-5.557
+                  c-1.569,1.118-2.625,2.228-3.032,4.21c-0.083-0.575-0.109-1.185-0.109-1.819c0-0.904,0.361-2.555,0.955-4.534
+                  C11.823,26.93,14.918,27.389,18.277,27.389z"/>
+              <path fill="#A3A3A3" d="M13.911,37.077"/>
+            </svg>
+          </label>
+
+          <label for="box">
+            <input type="radio" name="rating" class="box" id="box" value="box" checked />
+            <svg version="1.2" baseProfile="tiny" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="39px" height="41px" viewBox="0 0 39 41" xml:space="preserve">
+              <polygon fill="#6D6D6D" points="0.462,10.32 3.447,10.32 38.537,10.32 38.537,40.895 2.551,40.895 "/>
+              <rect x="3.547" y="25.896" fill="#B7B7B7" width="33.996" height="14.002"/>
+              <rect x="3.547" y="0.105" fill="#EFEFEF" width="33.996" height="25.791"/>
+              <path fill="#999899" d="M37.543,0.799V0.105h-0.732l-4.758,3.58H9.037l-4.76-3.58h-0.73v0.694l4.719,3.549v17.228l-4.719,3.549
+              v0.771h33.996v-0.771l-4.719-3.549V4.349L37.543,0.799z M27.225,4.68h4.604v16.64h-4.604V4.68z M21.084,4.68h5.061v16.64h-5.061
+              V4.68z M14.945,4.68h5.059v16.64h-5.059V4.68z M9.26,4.68h4.605v16.64H9.26V4.68z M36.811,25.818H4.277l4.76-3.58h23.016
+              L36.811,25.818z"/>
+              <rect x="3.539" y="35.559" fill="#999899" width="33.996" height="0.766"/>
+              <rect x="3.547" y="30.85" fill="#999899" width="33.996" height="0.768"/>
+            </svg>
+          </label>
+
+          <label for="complete">
+            <input type="radio" name="rating" class="complete" id="complete" value="complete" />
+            <svg version="1.2" baseProfile="tiny" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="78px" height="76px" viewBox="0 0 78 76" xml:space="preserve">
+              <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="38.9995" y1="0.0908" x2="38.9995" y2="75.9097">
+                <stop  offset="0.1758" style="stop-opacity:0"/>
+                <stop  offset="1" style=""/>
+              </linearGradient>
+              <path fill="url(#SVGID_1_)" d="M78,6.041l-39-5.95L0,6.041l4.48,49.263c0,0,6.322,20.605,34.509,20.605
+                c28.461,0,34.51-20.605,34.51-20.605L78,6.041z"/>
+
+              <image opacity="0.35" width="299" height="224" xlink:href="img/556F2C02.png"  transform="matrix(0.24 0 0 0.24 3.2002 26.2944)">
+              </image>
+
+              <image width="272" height="197" xlink:href="img/556F2C06.png"  transform="matrix(0.24 0 0 0.24 6.4502 26.5444)">
+              </image>
+              <path fill="#EEE" d="M38.997,26.794c17.808,0,32.295,10.473,32.295,23.346S56.805,73.487,38.997,73.487
+                C21.188,73.487,6.7,63.014,6.7,50.141S21.188,26.794,38.997,26.794 M38.997,26.294C20.883,26.294,6.2,36.971,6.2,50.141
+                c0,13.169,14.683,23.847,32.797,23.847c18.111,0,32.795-10.678,32.795-23.847C71.792,36.971,57.108,26.294,38.997,26.294
+                L38.997,26.294z"/>
+
+              <path fill="#EEE" d="M38.997,30.429c12.272,0,22.257,6.637,22.257,14.795c0,8.157-9.984,14.793-22.257,14.793
+                c-12.273,0-22.258-6.636-22.258-14.793C16.739,37.066,26.724,30.429,38.997,30.429 M38.997,28.929
+                c-13.12,0-23.758,7.296-23.758,16.295c0,8.999,10.638,16.293,23.758,16.293s23.757-7.294,23.757-16.293
+                C62.754,36.225,52.117,28.929,38.997,28.929L38.997,28.929z"/>
+              <linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="38.9995" y1="22.6899" x2="38.9995" y2="49.4556">
+                <stop  offset="0.1758" style="stop-opacity:0"/>
+                <stop  offset="0.4593" style="stop-opacity:0.3441"/>
+                <stop  offset="1" style=""/>
+              </linearGradient>
+              <path fill="url(#SVGID_2_)" d="M52.086,28.192L39,22.69l-13.086,5.502l1.581,13.988c0,0,0.313,7.274,11.502,7.274
+                c11.188,0,11.501-7.274,11.501-7.274L52.086,28.192z"/>
+
+              <image width="137" height="114" xlink:href="img/556F2C01.png"  transform="matrix(0.24 0 0 0.24 22.5684 29.0132)">
+              </image>
+
+              <image width="87" height="55" xlink:href="img/556F2C03.png"  transform="matrix(0.24 0 0 0.24 28.5684 37.0132)">
+              </image>
+              <path fill="#EEE" d="M38.997,35.513c5.474,0,9.927,2.735,9.927,6.097c0,3.36-4.453,6.095-9.927,6.095
+                c-5.475,0-9.929-2.734-9.929-6.095C29.068,38.249,33.522,35.513,38.997,35.513 M38.997,35.013c-5.76,0-10.429,2.956-10.429,6.597
+                c0,3.642,4.669,6.595,10.429,6.595c5.759,0,10.427-2.953,10.427-6.595C49.424,37.969,44.756,35.013,38.997,35.013L38.997,35.013z"
+                />
+
+            </svg>
+          </label>
+
+          <label for="character">
+            <input type="radio" name="rating" class="character" id="character" value="character" />
+            <svg version="1.2" baseProfile="tiny" id="图层_1"
+              xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="43px" height="79px" viewBox="0 0 43 79" xml:space="preserve">
+              <path fill="#797A7A" d="M0.264,69.048c0,5.233,9.507,9.476,21.235,9.476c11.729,0,21.237-4.242,21.237-9.476
+                c0-5.229-9.508-9.473-21.237-9.473C9.771,59.575,0.264,63.818,0.264,69.048z"/>
+              <polygon fill="#D8D8D8" points="35.107,69.827 35.686,73.297 31.361,74.498 26.352,73.473 26.676,70.205 30.949,68.641 "/>
+              <path fill="#D8D8D8" d="M16.359,12.073c-0.469,2.769-1.121,3.759-0.601,5.851s3.208,6.396,3.962,6.628
+                c1.217,0.375,0.061,4.351,0.061,4.351l4.245,4.195l5.231-4.28c0,0-1.688-4.242-0.763-4.506c1.321-0.372,3.017-4.188,3.568-6.476
+                c0.979-4.055,0.323-6.038-2.661-7.661C23.675,7.06,16.894,8.918,16.359,12.073z"/>
+              <path fill="#F2F2F2" d="M16.359,12.073c-0.469,2.769-1.121,3.759-0.601,5.851s3.187,6.484,3.962,6.628
+                c1.098,0.205,2.855,2.001,4.545,1.972c1.765-0.029,3.453-1.898,4.229-2.212c1.274-0.51,3.017-4.188,3.568-6.476
+                c0.979-4.055,0.323-6.038-2.661-7.661C23.675,7.06,16.894,8.918,16.359,12.073z"/>
+              <polygon fill="#D8D8D8" points="19.3,69.396 19.651,73.774 15.074,75.058 10.887,73.446 11.578,69.449 "/>
+              <path fill="#1D1D1D" d="M19.342,0.477c-1.217,2.748,5.766,2.654,5.766,2.654s4.531-0.237,5.881,1.846
+                c0.705,1.09,1.451,1.673,1.498,3.335c0.049,1.729,0.133,5.977-0.423,9.524c-0.14-3.313-1.025-4.348-1.612-5.777
+                c-1.284-3.132-4.605-2.18-6.412-1.734c-1.736-0.656-5.317-1.403-6.111,0.911c-1.014,2.956-2.031,2.965-2.169,6.688
+                C15.374,12.325,15.459,0.957,19.342,0.477z"/>
+              <polygon fill="#1D1D1D" points="33.541,49.456 33.284,53.81 35.402,69.112 36.895,70.574 25.748,70.574 24.157,56.528 
+                21.029,70.574 9.332,70.574 10.458,68.57 14.496,54.152 14.587,49.456 "/>
+              <polygon fill="#AFAFAF" points="19.525,26.682 24.351,31.202 29.515,26.682 33.829,27.854 33.978,50.663 14.111,50.663 
+                14.588,28.217 "/>
+              <path fill="#F2F2F2" d="M34.193,34.616c1.242,8.086,0.379,12.232,0.379,12.232s-0.088,0.671,0.65,1.304c0.738,0.63,2.325,0,2.325,0
+                s1.456-2.093,1.24-3.956c-0.745-6.428-0.596-9.999-0.596-9.999L34.193,34.616z"/>
+              <polygon fill="#D8D8D8" points="38.811,35.946 37.398,29.594 33.829,27.854 33.135,35.589 "/>
+              <path fill="#F2F2F2" d="M14.111,35.144c-1.286,8.086-0.393,12.235-0.393,12.235s0.091,0.668-0.673,1.301
+                c-0.765,0.633-2.407,0-2.407,0s-1.507-2.093-1.283-3.956c0.771-6.428,0.617-9.999,0.617-9.999L14.111,35.144z"/>
+              <polygon fill="#D8D8D8" points="9.432,36.307 10.893,29.957 14.588,28.217 15.307,35.949 "/>
+            </svg>
+          </label>
+
+        </form>
+      </div>
+
+      <div class="rating" style="background: none;">
+        <form class="rating-form" method="post" action="/game/save" onsubmit="gameinfo()">
+		  
+		  <input type="hidden" name="data_for_game" id="data_for_game" value=""/>
+          <button type="submit"> 保 存 </button>
+		  
+        </form>
+      </div>
+	  <div class="rating" style="background: none;">
+        <form class="rating-form" method="post" action="/game/cancel">
+          <button type="submit"> 取 消 </button>
+        </form>
+      </div>
+    </div>
+  </div>  
+        </div>    
+      </div>
+  </nav>
+  <div class="mapbox">
+    <div class="container">
+      <div class="map">
+	  {% for i in range(1, 17) %}
+	    {% for j in range(1, 17) %}
+	    
+        <div class="item" id={{ i }}_{{ j }} onclick="test({{ i }}, {{ j }})"><img id= {{ i }}-{{ j }} src="" /></div>
+		
+        {% endfor %}
+	  {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src='js/jquery.min.js'></script>
+<script src="js/index.js"></script>
+
+</body>
+</html>
